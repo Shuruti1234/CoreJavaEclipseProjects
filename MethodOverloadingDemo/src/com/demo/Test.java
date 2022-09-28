@@ -6,7 +6,7 @@ public class Test {
 		// TODO Auto-generated method stub
 		Addition a = new Addition();
 		int result;
-		result = a.add(3, 7.0);
+		result = a.add(3, 7);
 
 		System.out.println(result);
 

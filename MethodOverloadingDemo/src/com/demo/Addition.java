@@ -3,7 +3,7 @@ package com.demo;
 public class Addition {
 
 	// method overloading on the basis number of arguments
-	int add(int a, double b) {
+	static int add(int a, int b) {
 		System.out.println("---- 2 number int addition-------");
 		int sum = (int) (a + b);
 		return sum;
@@ -17,7 +17,7 @@ public class Addition {
 //		return sum;
 //	}
 
-	int add(int a, int b, int c) {
+	static int add(int a, int b, int c) {
 		System.out.println("---- 3 number addition-------");
 		int sum = a + b + c;
 		return sum;
@@ -29,6 +29,12 @@ public class Addition {
 		System.out.println("---- 2 number float addition-------");
 		float sum = a + b;
 		return sum;
+	}
+
+	public static void main(String[] args) {
+		add(1, 2);
+		add(3, 5, 6);
+
 	}
 
 }
