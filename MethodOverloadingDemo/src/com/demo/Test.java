@@ -3,10 +3,8 @@ package com.demo;
 public class Test {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Addition a = new Addition();
 		int result;
-		result = a.add(3, 7);
+		result = Addition.add(3, 7);
 
 		System.out.println(result);
 
