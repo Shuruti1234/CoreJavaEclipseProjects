@@ -1,0 +1,3 @@
+[main] DEBUG com.demo.Example  - Hello this is a debug message
+  [main] INFO  com.demo.Example  - Hello this is an info message
+  
