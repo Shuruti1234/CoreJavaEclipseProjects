@@ -78,11 +78,29 @@ public class StudentDaoImpl implements StudentDao {
 				sfind = s;
 		}
 		if (sfind != null) {
-			System.out.println("Enter the name :");
-			sfind.setName(sc.next());
-			System.out.println("Enter the marks :");
-			sfind.setMarks(sc.nextFloat());
-			status = true;
+			int ch = 0;
+			System.out.println("1. Update name");
+			System.out.println("2. Update Marks");
+			ch = sc.nextInt();
+			switch (ch) {
+			case 1:
+				System.out.println("Enter the name :");
+				sfind.setName(sc.next());
+				System.out.println("Name updated........");
+				status = true;
+				break;
+
+			case 2:
+				System.out.println("Enter the marks :");
+				sfind.setMarks(sc.nextFloat());
+				System.out.println("Marks updated........");
+				status = true;
+				break;
+
+			default:
+				System.out.println("No such property.....");
+			}
+
 		} else
 			status = false;
 		return status;
