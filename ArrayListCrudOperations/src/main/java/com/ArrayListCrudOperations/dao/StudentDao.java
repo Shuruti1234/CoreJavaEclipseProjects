@@ -8,8 +8,10 @@ public interface StudentDao {
 
 	boolean deleteStudent(int id);
 
-	boolean updateStudent(int id, Student s);
+	boolean updateStudent(int id);
 
 	Student findStudent(int id);
+
+	void displayAll();
 
 }

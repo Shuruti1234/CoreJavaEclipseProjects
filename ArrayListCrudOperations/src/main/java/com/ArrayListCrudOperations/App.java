@@ -29,49 +29,67 @@ public class App {
 		StudentDao school = new StudentDaoImpl();
 
 		// declaring varible choice
-		int ch = 0;
-		do {
-			menu();
-			ch = sc1.nextInt();
-			switch (ch) {
-			case 1:
-				school.addStudent();
-				System.out.println("Student inserted..........");
-				break;
-			case 2:
-				System.out.println("Enter the Id to be deleted:");
-				int id = sc1.nextInt();
-				boolean flag = school.deleteStudent(id);
-				if (flag)
-					System.out.println("Student deleted.......");
-				else
-					System.out.println("Student not found......");
-				break;
+		try {
+			int ch = 0;
+			do {
+				menu();
+				ch = sc1.nextInt();
+				switch (ch) {
+				case 1:
+					school.addStudent();
+					System.out.println("Student inserted..........");
+					break;
+				case 2:
+					System.out.println("Enter the Id to be deleted:");
+					int id = sc1.nextInt();
+					boolean flag = school.deleteStudent(id);
+					if (flag)
+						System.out.println("Student deleted.......");
+					else
+						System.out.println("Student not found......");
+					break;
 
-			case 4:
-				Student ss = null;
-				System.out.println("Enter the Id to be searched:");
-				id = sc1.nextInt();
-				ss = school.findStudent(id);
-				if (ss == null)
-					System.out.println("Student not found.......");
-				else
-					System.out.println(
-							"Student Id :" + ss.getId() + "  Name:" + ss.getName() + "   Marks:" + ss.getMarks());
-				break;
-			case 6:
-				System.exit(0);
-				break;
-			default:
-				System.out.println("Wrong input.......");
+				case 3:
+					System.out.println("Enter the Id to be updated:");
+					id = sc1.nextInt();
+					flag = school.updateStudent(id);
+					if (flag)
+						System.out.println("Student updated......");
+					else
+						System.out.println("Student not found......");
+					break;
 
-			}
+				case 4:
+					Student ss = null;
+					System.out.println("Enter the Id to be searched:");
+					id = sc1.nextInt();
+					ss = school.findStudent(id);
+					if (ss == null)
+						System.out.println("Student not found.......");
+					else
+						System.out.println(
+								"Student Id :" + ss.getId() + "  Name:" + ss.getName() + "   Marks:" + ss.getMarks());
+					break;
 
-		} while (ch != 6);
+				case 5:
+					school.displayAll();
+					break;
 
-		// end of do while
+				case 6:
+					System.exit(0);
+					break;
+				default:
+					System.out.println("Wrong input.......");
 
-		sc1.close();
+				}
 
+			} while (ch != 6);
+
+			// end of do while
+
+			sc1.close();
+		} catch (Exception e) {
+			System.out.println(e);
+		}
 	}
 }

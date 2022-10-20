@@ -55,12 +55,6 @@ public class StudentDaoImpl implements StudentDao {
 	}
 
 	@Override
-	public boolean updateStudent(int id, Student s) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
 	public Student findStudent(int id) {
 
 		Student sfind = null;
@@ -71,6 +65,37 @@ public class StudentDaoImpl implements StudentDao {
 		}
 
 		return sfind;
+	}
+
+	@Override
+	public boolean updateStudent(int id) {
+		// TODO Auto-generated method stub
+		boolean status = false;
+		Student sfind = null;
+		// finding the student
+		for (Student s : sList) {
+			if (s.getId() == id)
+				sfind = s;
+		}
+		if (sfind != null) {
+			System.out.println("Enter the name :");
+			sfind.setName(sc.next());
+			System.out.println("Enter the marks :");
+			sfind.setMarks(sc.nextFloat());
+			status = true;
+		} else
+			status = false;
+		return status;
+	}
+
+	@Override
+	public void displayAll() {
+		// TODO Auto-generated method stub
+
+		for (Student s : sList) {
+			System.out.println(s);
+		}
+
 	}
 
 }
