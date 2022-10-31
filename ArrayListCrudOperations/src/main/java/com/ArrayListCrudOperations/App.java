@@ -36,7 +36,15 @@ public class App {
 				ch = sc1.nextInt();
 				switch (ch) {
 				case 1:
-					school.addStudent();
+					Student ss = new Student();
+					// input the details of student
+					System.out.println("Enter the id :");
+					ss.setId(sc1.nextInt());
+					System.out.println("Enter the name :");
+					ss.setName(sc1.next());
+					System.out.println("Enter the marks :");
+					ss.setMarks(sc1.nextFloat());
+					school.addStudent(ss);
 					System.out.println("Student inserted..........");
 					break;
 				case 2:
@@ -60,7 +68,7 @@ public class App {
 					break;
 
 				case 4:
-					Student ss = null;
+					ss = null;
 					System.out.println("Enter the Id to be searched:");
 					id = sc1.nextInt();
 					ss = school.findStudent(id);

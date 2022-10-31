@@ -4,7 +4,7 @@ import com.ArrayListCrudOperations.model.Student;
 
 public interface StudentDao {
 
-	void addStudent();
+	void addStudent(Student s);
 
 	boolean deleteStudent(int id);
 

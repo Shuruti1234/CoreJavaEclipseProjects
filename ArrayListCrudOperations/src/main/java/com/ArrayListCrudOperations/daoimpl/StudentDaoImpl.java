@@ -15,20 +15,12 @@ public class StudentDaoImpl implements StudentDao {
 	// creating student object
 
 	@Override
-	public void addStudent() {
+	public void addStudent(Student s) {
 
 		// creating student object
-		Student ss = new Student();
-		// input the details of student
-		System.out.println("Enter the id :");
-		ss.setId(sc.nextInt());
-		System.out.println("Enter the name :");
-		ss.setName(sc.next());
-		System.out.println("Enter the marks :");
-		ss.setMarks(sc.nextFloat());
 
 		// adding the student into the collection
-		sList.add(ss);
+		sList.add(s);
 		System.out.println(sList);
 
 	}
