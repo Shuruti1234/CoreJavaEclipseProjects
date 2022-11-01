@@ -2,6 +2,11 @@ package com.ArrayListCrudOperations;
 
 import java.util.Scanner;
 
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+import org.apache.log4j.Logger;
+
 import com.ArrayListCrudOperations.dao.StudentDao;
 import com.ArrayListCrudOperations.daoimpl.StudentDaoImpl;
 import com.ArrayListCrudOperations.model.Student;
@@ -11,6 +16,9 @@ import com.ArrayListCrudOperations.model.Student;
  *
  */
 public class App {
+
+	static Logger log = Logger.getLogger(App.class.getName());
+	static JFrame f1;
 
 	public static void menu() {
 		System.out.println("MENU:");
@@ -27,25 +35,31 @@ public class App {
 		Scanner sc1 = new Scanner(System.in);
 		// creating object of impl
 		StudentDao school = new StudentDaoImpl();
-
+		f1 = new JFrame();
 		// declaring varible choice
 		try {
 			int ch = 0;
 			do {
 				menu();
+				// creating a frame
 				ch = sc1.nextInt();
+				// JOptionPane.showMessageDialog(f1, "Choice entered");
 				switch (ch) {
 				case 1:
 					Student ss = new Student();
 					// input the details of student
-					System.out.println("Enter the id :");
-					ss.setId(sc1.nextInt());
-					System.out.println("Enter the name :");
-					ss.setName(sc1.next());
-					System.out.println("Enter the marks :");
-					ss.setMarks(sc1.nextFloat());
+					ss.setId(Integer.parseInt(JOptionPane.showInputDialog("Enter the ID:")));
+					// ss.setId(sc1.nextInt());
+					// System.out.println("Enter the name :");
+					// ss.setName(sc1.next());
+					ss.setName(JOptionPane.showInputDialog("Enter the Name:"));
+					// System.out.println("Enter the marks :");
+					// ss.setMarks(sc1.nextFloat());
+					ss.setMarks(Float.parseFloat(JOptionPane.showInputDialog("Enter the Marks:")));
 					school.addStudent(ss);
-					System.out.println("Student inserted..........");
+
+					JOptionPane.showMessageDialog(null, "Student inserted......");
+					log.info("Student is added at" + new java.util.Date());
 					break;
 				case 2:
 					System.out.println("Enter the Id to be deleted:");

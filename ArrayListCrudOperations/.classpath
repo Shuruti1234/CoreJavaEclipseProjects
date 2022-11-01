@@ -24,5 +24,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry kind="lib" path="D:/log4j-1.2.17.zip"/>
+	<classpathentry kind="lib" path="Properties"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
